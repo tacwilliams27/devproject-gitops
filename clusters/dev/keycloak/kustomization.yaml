@@ -9,3 +9,5 @@ resources:
   - keycloak-helmrelease.yaml
   - keycloak-gateway.yaml
   - keycloak-virtualservice.yaml
+  - keycloak-db.yaml
+
