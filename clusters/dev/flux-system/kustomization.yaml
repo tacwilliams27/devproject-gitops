@@ -1,7 +1,12 @@
 ﻿apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
-resources:
-  - gotk-components.yaml
-  - gotk-sync.yaml
-  - flux-kustomization.yaml
+metadata:
+  name: flux-system
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: ./clusters/dev
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
