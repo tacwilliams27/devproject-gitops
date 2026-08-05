@@ -6,7 +6,6 @@ resources:
   - cnpg-helmrepo.yaml
   - cnpg-operator.yaml
   - keycloak-db-secret.yaml
-  - keycloak-db.yaml
   - keycloak-helmrelease.yaml
   - keycloak-gateway.yaml
   - keycloak-virtualservice.yaml
