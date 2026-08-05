@@ -14,5 +14,8 @@ spec:
         namespace: flux-system
   interval: 1m
   values:
+    image:
+      repository: docker.io/istio/proxyv2
+      tag: 1.30.3
     service:
       type: LoadBalancer
