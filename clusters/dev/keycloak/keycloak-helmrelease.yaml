@@ -15,7 +15,7 @@ spec:
         namespace: flux-system
 
   values:
-      auth:
+    auth:
       adminUser: admin
       adminPassword: YOUR_KEYCLOAK_ADMIN_PASSWORD
 
@@ -32,3 +32,4 @@ spec:
 
     ingress:
       enabled: false
+
