@@ -13,6 +13,7 @@ spec:
         kind: HelmRepository
         name: bitnami
         namespace: flux-system
+
   values:
     image:
       repository: docker.io/bitnami/keycloak
