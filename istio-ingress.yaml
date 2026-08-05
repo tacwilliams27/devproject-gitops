@@ -1,0 +1,6 @@
+  values:
+    global:
+      hub: docker.io/istio
+      tag: 1.30.3
+    service:
+      type: LoadBalancer
