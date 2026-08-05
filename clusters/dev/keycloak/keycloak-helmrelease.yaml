@@ -27,6 +27,9 @@ spec:
       password: YOUR_DB_PASSWORD
       database: keycloak
 
+    postgresql: 
+      enabled: false
+      
     service:
       type: ClusterIP
 
