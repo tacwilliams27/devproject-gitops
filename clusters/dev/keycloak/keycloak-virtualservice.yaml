@@ -5,15 +5,12 @@ metadata:
   namespace: keycloak
 spec:
   hosts:
-  - 40.76.133.153
+    - keycloak.example.com
   gateways:
-  - keycloak-gateway
+    - keycloak-gateway
   http:
-  - match:
-    - uri:
-        prefix: /keycloak
-    route:
-    - destination:
-        host: keycloak.keycloak.svc.cluster.local
-        port:
-          number: 8080
+    - route:
+        - destination:
+            host: keycloak.keycloak.svc.cluster.local
+            port:
+              number: 80

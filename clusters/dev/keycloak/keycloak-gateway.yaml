@@ -5,11 +5,11 @@ metadata:
   namespace: keycloak
 spec:
   selector:
-    istio: ingress
+    istio: ingressgateway
   servers:
-  - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    hosts:
-    - 40.76.133.153
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - keycloak.example.com

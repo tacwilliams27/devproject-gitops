@@ -39,7 +39,3 @@ spec:
 
     ingress:
       enabled: false
-
-
-
-

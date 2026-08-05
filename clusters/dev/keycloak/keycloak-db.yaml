@@ -4,15 +4,13 @@ metadata:
   name: keycloak-db
   namespace: keycloak
 spec:
-  instances: 1
+  instances: 2
+  primaryUpdateStrategy: unsupervised
   storage:
-    size: 20Gi
-    storageClass: managed-csi
+    size: 10Gi
   bootstrap:
     initdb:
       database: keycloak
       owner: kcadmin
       secret:
         name: keycloak-db-secret
-  monitoring:
-    enablePodMonitor: true
