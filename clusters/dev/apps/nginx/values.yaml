@@ -1,0 +1,5 @@
+﻿values:
+  image:
+    registry: docker.io
+    repository: bitnami/nginx
+    tag: "1.27.0-debian-12-r0"
