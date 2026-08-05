@@ -4,5 +4,4 @@ resources:
   - helmrepository.yaml
   - istio-base.yaml
   - istio-ingress.yaml
-  - istiod.yaml
   - helmreleases
