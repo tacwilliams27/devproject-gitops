@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - namespace.yaml
+  - cnpg-helmrepo.yaml
+  - cnpg-operator.yaml
+  - keycloak-db-secret.yaml
+  - keycloak-db.yaml
+  - keycloak-helmrelease.yaml
+  - keycloak-gateway.yaml
+  - keycloak-virtualservice.yaml
