@@ -16,8 +16,8 @@ spec:
 
   values:
     image:
-      repository: docker.io/bitnamilegacy/keycloak
-      tag: 26.0.0-debian-12-r1
+      repository: quay.io/keycloak/keycloak
+      tag: 26.0.0
 
     auth:
       adminUser: admin
