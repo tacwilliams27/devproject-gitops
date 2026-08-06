@@ -18,7 +18,7 @@ spec:
     image:
       registry: docker.io
       repository: keycloak/keycloak
-      tag: "26.3.0"
+      tag: "26.3.3"
 
     auth:
       adminUser: admin
