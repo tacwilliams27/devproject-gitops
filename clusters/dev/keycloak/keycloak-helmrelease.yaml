@@ -3,39 +3,36 @@ kind: HelmRelease
 metadata:
   name: keycloak
   namespace: keycloak
+
 spec:
   interval: 5m
+
   chart:
     spec:
       chart: keycloak
-      version: 24.0.0
       sourceRef:
-        kind: HelmRepository
-        name: bitnami
+        kind: OCIRepository
+        name: keycloak
         namespace: flux-system
 
   values:
+    replicas: 1
+
     image:
       repository: quay.io/keycloak/keycloak
-      tag: 26.0.0
+      tag: "26.3.0"
 
-    auth:
-      adminUser: admin
-      adminPassword: YOUR_KEYCLOAK_ADMIN_PASSWORD
+    admin:
+      username: admin
+      password: YOUR_KEYCLOAK_ADMIN_PASSWORD
 
-    database:
+    db:
       vendor: postgres
       host: keycloak-db-rw.keycloak.svc.cluster.local
       port: 5432
+      database: keycloak
       username: kcadmin
       password: YOUR_DB_PASSWORD
-      database: keycloak
-
-    postgresql:
-      enabled: false
 
     service:
       type: ClusterIP
-
-    ingress:
-      enabled: false
