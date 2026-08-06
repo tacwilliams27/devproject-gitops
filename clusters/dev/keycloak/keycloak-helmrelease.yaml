@@ -1,41 +1,27 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
-metadata:
-  name: keycloak
-  namespace: keycloak
+values:
+  replicas: 1
 
-spec:
-  interval: 5m
+  global:
+    security:
+      allowInsecureImages: true
 
-  chartRef:
-    kind: OCIRepository
-    name: keycloak
-    namespace: flux-system
+  image:
+    repository: quay.io/keycloak/keycloak
+    tag: "26.3.0"
 
-  values:
-    replicas: 1
+  auth:
+    adminUser: admin
+    adminPassword: YOUR_KEYCLOAK_ADMIN_PASSWORD
 
-    global:
-      security:
-        allow Insecure Images: true
+  externalDatabase:
+    host: keycloak-db-rw.keycloak.svc.cluster.local
+    port: 5432
+    user: kcadmin
+    password: YOUR_DB_PASSWORD
+    database: keycloak
 
-    image:
-      repository: quay.io/keycloak/keycloak
-      tag: "26.3.0"
+  postgresql:
+    enabled: false
 
-    auth:
-      adminUser: admin
-      adminPassword: YOUR_KEYCLOAK_ADMIN_PASSWORD
-
-    externalDatabase:
-      host: keycloak-db-rw.keycloak.svc.cluster.local
-      port: 5432
-      user: kcadmin
-      password: YOUR_DB_PASSWORD
-      database: keycloak
-
-    postgresql:
-      enabled: false
-
-    service:
-      type: ClusterIP
+  service:
+    type: ClusterIP
