@@ -7,21 +7,20 @@ metadata:
 spec:
   interval: 5m
 
-  chartRef:
-    kind: OCIRepository
-    name: keycloak
-    namespace: flux-system
+  chart:
+    spec:
+      chart: keycloak
+      version: 25.2.0
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
 
   values:
     replicas: 1
 
-    global:
-      security:
-        allowInsecureImages: true
-
     image:
-      registry: quay.io
-      repository: keycloak/keycloak
+      repository: quay.io/keycloak/keycloak
       tag: "26.3.0"
 
     auth:
@@ -40,5 +39,3 @@ spec:
 
     service:
       type: ClusterIP
-
-
