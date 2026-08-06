@@ -21,7 +21,7 @@ spec:
 
     image:
       registry: quay.io
-      repository: /keycloak/keycloak
+      repository: keycloak/keycloak
       tag: "26.3.0"
 
     auth:
