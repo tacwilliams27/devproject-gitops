@@ -7,13 +7,10 @@ metadata:
 spec:
   interval: 5m
 
-  chart:
-    spec:
-      chart: keycloak
-      sourceRef:
-        kind: OCIRepository
-        name: keycloak
-        namespace: flux-system
+  chartRef:
+    kind: OCIRepository
+    name: keycloak
+    namespace: flux-system
 
   values:
     replicas: 1
