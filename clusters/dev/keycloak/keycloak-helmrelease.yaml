@@ -15,12 +15,8 @@ spec:
   values:
     replicas: 1
 
-    global:
-      security:
-        allowInsecureImages: true
-
     image:
-      registry: quay.io
+      registry: docker.io
       repository: keycloak/keycloak
       tag: "26.3.0"
 
