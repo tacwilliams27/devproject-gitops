@@ -16,7 +16,8 @@ spec:
     replicas: 1
 
     image:
-      repository: quay.io/keycloak/keycloak
+      registry: quay.io
+      repository: keycloak/keycloak
       tag: "26.3.0"
 
     auth:
@@ -35,3 +36,4 @@ spec:
 
     service:
       type: ClusterIP
+
