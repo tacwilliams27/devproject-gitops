@@ -1,0 +1,10 @@
+﻿apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: keycloak
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://github.com/keycloak/keycloak-kubernetes.git
+  ref:
+    tag: 26.3.0
