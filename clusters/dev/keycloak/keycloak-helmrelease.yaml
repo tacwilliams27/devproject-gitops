@@ -15,9 +15,13 @@ spec:
   values:
     replicas: 1
 
+    global:
+      security:
+        allowInsecureImages: true
+
     image:
       registry: docker.io
-      repository: keycloak/keycloak
+      repository: bitnami/keycloak
       tag: "26.3.3"
 
     auth:
