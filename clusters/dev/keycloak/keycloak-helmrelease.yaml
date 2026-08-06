@@ -15,6 +15,10 @@ spec:
   values:
     replicas: 1
 
+    global:
+      security:
+        allow Insecure Images: true
+
     image:
       repository: quay.io/keycloak/keycloak
       tag: "26.3.0"
