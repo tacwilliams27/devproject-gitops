@@ -1,27 +1,36 @@
-values:
-  replicas: 1
+spec:
+  interval: 5m
 
-  global:
-    security:
-      allowInsecureImages: true
+  chartRef:
+    kind: OCIRepository
+    name: keycloak
+    namespace: flux-system
 
-  image:
-    repository: quay.io/keycloak/keycloak
-    tag: "26.3.0"
+  values:
+    replicas: 1
 
-  auth:
-    adminUser: admin
-    adminPassword: YOUR_KEYCLOAK_ADMIN_PASSWORD
+    global:
+      security:
+        allowInsecureImages: true
 
-  externalDatabase:
-    host: keycloak-db-rw.keycloak.svc.cluster.local
-    port: 5432
-    user: kcadmin
-    password: YOUR_DB_PASSWORD
-    database: keycloak
+    image:
+      registry: quay.io
+      repository: keycloak/keycloak
+      tag: "26.3.0"
 
-  postgresql:
-    enabled: false
+    auth:
+      adminUser: admin
+      adminPassword: YOUR_KEYCLOAK_ADMIN_PASSWORD
 
-  service:
-    type: ClusterIP
+    externalDatabase:
+      host: keycloak-db-rw.keycloak.svc.cluster.local
+      port: 5432
+      user: kcadmin
+      password: YOUR_DB_PASSWORD
+      database: keycloak
+
+    postgresql:
+      enabled: false
+
+    service:
+      type: ClusterIP
