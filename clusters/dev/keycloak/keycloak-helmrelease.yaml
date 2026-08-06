@@ -20,6 +20,7 @@ spec:
         allowInsecureImages: true
 
     image:
+      registry: quay.io
       repository: quay.io/keycloak/keycloak
       tag: "26.3.0"
 
