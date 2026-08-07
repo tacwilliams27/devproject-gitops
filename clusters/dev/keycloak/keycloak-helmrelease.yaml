@@ -24,18 +24,8 @@ spec:
       repository: bitnamilegacy/keycloak
       tag: "26.3.3-debian-12-r0"
 
-    extraEnvVars:
-      - name: KEYCLOAK_ADMIN
-        valueFrom:
-          secretKeyRef:
-            name: keycloak-admin-secret
-            key: admin-user
-
-      - name: KEYCLOAK_ADMIN_PASSWORD
-        valueFrom:
-          secretKeyRef:
-            name: keycloak-admin-secret
-            key: admin-password
+    auth:
+      existingSecret: keycloak-admin-secret
 
     externalDatabase:
       host: keycloak-db-rw.keycloak.svc.cluster.local
@@ -47,12 +37,6 @@ spec:
     postgresql:
       enabled: false
 
-  
     service:
       type: ClusterIP
-      ports:
-        - name: http
-          port: 80
-          targetPort: 8080
-
 
